@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="car"
+            type="com.example.mvvmapplication.data.db.entities.Car"/>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/car_index"
+                android:layout_marginTop="7dp"
+                tools:text="1"
+                android:text="@{car.index}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:id="@+id/car_model_name"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_below="@+id/car_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{car.modelName}"
+                tools:text="Model Name"/>
+
+            <TextView
+                android:textColor="@color/colorPrimary"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:text="Year"
+                android:text="@{car.modelYear}"
+                android:layout_below="@id/car_model_name"
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"/>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
